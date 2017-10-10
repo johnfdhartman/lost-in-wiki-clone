@@ -15,7 +15,10 @@
 
 /node_modules
 /yarn-error.log
-
+/wikidata/in_links.txt
+/wikidata/data
+/wikidata/gen
+/wikidata/indexbi.bin
 .byebug_history
 
 bundle.js
