@@ -19,7 +19,10 @@
 /wikidata/data
 /wikidata/gen
 /wikidata/indexbi.bin
+/wikidata/num_out_links.txt
+/wikidata/page_ranks.txt
 .byebug_history
+
 
 bundle.js
 bundle.js.map

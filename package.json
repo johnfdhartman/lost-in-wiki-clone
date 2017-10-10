@@ -1,5 +1,5 @@
 {
-  "name": "LostInWiki",
+  "name": "lostinwiki",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -14,12 +14,14 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "fs": "empty"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "devDependencies": {},
@@ -29,5 +31,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonataFarm/lost_in_wiki.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sonataFarm/lost_in_wiki/issues"
+  },
+  "homepage": "https://github.com/sonataFarm/lost_in_wiki#readme"
 }
