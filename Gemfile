@@ -57,6 +57,7 @@ group :development do
   gem 'multi_json'
   gem 'sqlite3'
   gem 'webpacker', '~> 2.0'
+  gem 'seed_dump'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
