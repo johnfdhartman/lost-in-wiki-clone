@@ -171,7 +171,3 @@ class Graph
     STDERR.puts msg if @debug
   end
 end
-
-f = File.open('indexbi.bin')
-g = Graph.new(f, 'xindex-nocase.db')
-binding.pry
