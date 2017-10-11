@@ -1,4 +1,4 @@
-require_relative '../wikidata/analyze/graph.rb'
+require_relative "#{Rails.root}/db/wikidata/analyze/graph.rb"
 require 'sqlite3'
 require 'multi_json'
 
@@ -10,27 +10,24 @@ class SeedUtil
   include Singleton
 
   def load_page_ranks
-    page_ranks_txt = File.open('../wikidata/page_ranks.txt')
-    page_ranks = MultiJson.open(page_ranks_txt)
+    page_ranks_txt = File.open("#{Rails.root}/db/wikidata/page_ranks.txt")
+    page_ranks = MultiJson.load(page_ranks_txt)
     page_ranks_txt.close
     page_ranks
-  end
-
-  def load_pages
-    old_db = SQLite3::Database.new('xindex-nocase.db')
-    old_db.execute('SELECT * FROM pages')
   end
 
   def generate_seeds
     page_ranks = load_page_ranks
     pages = load_pages
-    pages.each do |page|
+    pages.each_with_index do |page, idx|
       title, offset = page[0], page[1]
       page_rank = page_ranks[offset.to_s]
       newPage = Page.new(title: title, page_rank: page_rank)
       unless newPage.save
         puts "Page didn't save for some gorram reason"
       end
+      puts "Loaded page #{idx}" if idx % 10000 == 0
     end
   end
+
 end

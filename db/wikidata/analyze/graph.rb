@@ -1,3 +1,6 @@
+#All the code in this file before Save In Links was taken from
+#trishume's wikicrush code.
+
 require "sqlite3"
 require 'multi_json'
 require 'pry'
