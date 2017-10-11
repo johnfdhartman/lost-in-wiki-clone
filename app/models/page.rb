@@ -4,7 +4,8 @@ class Page < ApplicationRecord
       #destroys all pages that begin with Category:, Wikipedia:,
       #MediaWiki: or contain (disambiguation)
       Page.where("
-        title SIMILAR TO '(Wikipedia\:|Category\:|MediaWiki\:)%'
+        title SIMILAR TO
+          '(Wikipedia\:|Category\:|MediaWiki\:|Portal\:)%'
         OR title SIMILAR TO '%disambiguation%'")
         .destroy
   end
