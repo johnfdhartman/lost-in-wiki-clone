@@ -5,10 +5,12 @@ require 'multi_json'
 #these methods turn the existing sqlite3 and JSON data into seeds
 #for the postgres db
 
+
 class SeedUtil
+  include Singleton
 
   def load_page_ranks
-    page_ranks_txt = File.open('page_ranks.txt')
+    page_ranks_txt = File.open('../wikidata/page_ranks.txt')
     page_ranks = MultiJson.open(page_ranks_txt)
     page_ranks_txt.close
     page_ranks
